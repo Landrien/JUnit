@@ -1,26 +1,60 @@
 package Junit1.Bank;
 
+/**
+ * Classe de base qui gère le solde et permet les opérations de dépôt et de retrait.
+ *
+ * @author Hadrien Landemarre
+ */
+
+
 public class BankAccount {
-    double amount;
-    double balance;
+   static double balance;
 
-    BankAccount(double amount) {
-        this.amount = amount;
-        this.balance = amount;
+    /**
+     *
+     * @param balance
+     */
+    /**
+     *
+     * Le constucteur de la classe
+     * */
+
+    public BankAccount(double balance) throws IllegalArgumentException {
+        BankAccount.balance = balance;
     }
-    void deposit(double amount){
+
+    /**
+     * @Exeception si un retrait dépasse le solde disponible.
+     * @param amount
+     * @return
+     */
+
+    public static double deposit(double amount){
         if (amount > 0) {
-            this.balance += amount;
+            balance += amount;
         }
+        return balance;
     }
 
-    void withdraw(double amount){
+    /**
+     *
+     * @param amount
+     * @return la valeur du compte quand on retire de l'argent
+     */
+
+    public static double withdraw(double amount){
         if (amount > 0 && amount <= balance) {
-            this.balance -= amount;
+            balance -= amount;
         }
+        return balance;
     }
 
-    double getBalance(){
+    /**
+     *
+     * @return la valeur du compte
+     */
+
+    public static double getBalance(){
         return balance;
     }
 

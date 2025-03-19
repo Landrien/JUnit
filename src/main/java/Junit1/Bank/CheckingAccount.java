@@ -1,12 +1,29 @@
 package Junit1.Bank;
 
+/**
+ * Hérite de BankAccount et ajoute une méthode deductFees()
+ * pour réduire le solde en fonction de frais fixes.
+ * @author Hadrien Landemarre
+ */
+
 public class CheckingAccount extends BankAccount {
-    CheckingAccount(double amount) {
+
+    /**
+     * Constructeur de la classe
+     * @param amount
+     */
+    public CheckingAccount(double amount) {
         super(amount);
     }
 
-    void deductFees(){
+
+    /**
+     *
+     * @return la valeur du compte après une déduction d'impot
+     */
+
+    public static double deductFees(){
         int Fees = 10;
-        this.balance -= Fees;
+        return balance -= Fees;
     }
 }
